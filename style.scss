@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+$background: #eaedf2;
+$background2: #b9c7d4;
+$blue: #3048c5;
+$dark: #292a3d;
+
+// =========================================================================
+// Mixins
+// =========================================================================
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+}
+
+@mixin buttons {
+  @include flex-between;
+
+  h3 {
+    border: $blue 2px solid;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: clamp(0.75rem, 1.1vw, 3rem);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@mixin white-btn {
+  color: $blue;
+}
+
+@mixin blue-btn {
+  background: $blue;
+  color: white;
+}
+
+// =========================================================================
+// Body
+// =========================================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: $dark;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+// =========================================================================
+// Header Section
+// =========================================================================
+header {
+  background: $background;
+  padding-block: clamp(1rem, 1.5vw, 4rem);
+
+  .header-container {
+    @include flex-between;
+    justify-content: space-between;
+
+    .logo {
+      h1 {
+        font-size: clamp(1rem, 1.5vw, 4rem);
+        text-transform: uppercase;
+        span {
+          background: $blue;
+          border-radius: 5px;
+          color: white;
+          padding: 0.25rem 0.5rem;
+          margin-right: 2%;
+        }
+      }
+    }
+    .header-links {
+      font-size: clamp(0.8rem, 1vw, 1vw);
+      a {
+        cursor: pointer;
+        padding: 0 1rem;
+      }
+    }
+    .header-btns {
+      @include buttons;
+      width: 19%;
+
+      .login-btn {
+        @include white-btn;
+        margin-right: 5%;
+        padding: 3% 10%;
+      }
+      .signUp-btn {
+        @include blue-btn;
+        padding: 3% 8%;
+      }
+    }
+  }
+}
+
+// Toggle Button
+// ----------------------------------------------------------------
+.toggle-button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  display: none;
+  top: 1.5%;
+  right: 8%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: clamp(1.5rem, 4%, 4%);
+  height: 2.25%;
+
+  span {
+    height: 3px;
+    width: 1000px;
+    background-color: $blue;
+    border-radius: 10px;
+  }
+  .bar1 {
+    width: 100%;
+  }
+  .bar2 {
+    width: 80%;
+  }
+  .bar3 {
+    width: 100%;
+  }
+}
+// =========================================================================
+// Cryptocurency Section
+// =========================================================================
+
+#crypto {
+  background-color: $background;
+
+  .crypto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 8%;
+
+    .crypto-left {
+      h2 {
+        color: $blue;
+        font-size: clamp(0.75rem, 1.1vw, 3rem);
+      }
+      h1 {
+        font-size: clamp(2rem, 4vw, 10rem);
+        padding-block: 3%;
+
+        span {
+          color: $blue;
+        }
+      }
+      p {
+        font-size: clamp(0.5rem, 1vw, 2rem);
+        line-height: 180%;
+        padding-bottom: 5%;
+        width: 65%;
+      }
+      .crypto-btns {
+        @include buttons;
+
+        .started-btn {
+          @include blue-btn;
+          padding: 2% 6%;
+        }
+        .download-btn {
+          @include white-btn;
+          margin-left: 2%;
+          padding: 2% 6%;
+        }
+      }
+    }
+    .crypto-right {
+      padding-top: 10%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// =========================================================================
+// Chart Section
+// =========================================================================
+
+#crypto-chart {
+  background-color: white;
+  padding-block: 2%;
+
+  .chart-container {
+    .chart {
+      display: grid;
+      grid-template-columns: 0.25fr 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+    }
+    .chart-header {
+      border-block: 1px rgba(0, 0, 0, 0.2) solid;
+      font-size: clamp(0.5rem, 0.8vw, 2rem);
+      padding-block: 0.5%;
+    }
+    .chart-crypto {
+      border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+      font-size: clamp(0.7rem, 1vw, 2.5rem);
+      padding-block: 2.5%;
+      .crypto-name-chart {
+        display: flex;
+        img {
+          margin-right: 5%;
+          width: clamp(0.8rem, 8%, 2.5rem);
+        }
+      }
+    }
+  }
+}
+
+// =========================================================================
+// Media Queries
+// =========================================================================
+
+@media only screen and (max-width: 900px) {
+  .header-links,
+  .header-btns {
+    display: none !important;
+  }
+  .toggle-button {
+    display: flex;
+  }
+  .active {
+    background-color: $background;
+    position: absolute;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 28%;
+    padding-bottom: 5%;
+    width: 80%;
+    z-index: 5;
+
+    a {
+      padding: 0.2rem 0 !important;
+    }
+  }
+  .chart {
+    grid-template-columns: 0.25fr 1fr 1fr 0.5fr !important;
+  }
+  .hide {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .crypto-container {
+    grid-template-columns: 1fr !important;
+  }
+  .crypto-left {
+    margin: 0 auto !important;
+  }
+}
