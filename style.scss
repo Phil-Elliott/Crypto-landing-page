@@ -38,6 +38,12 @@ $dark: #292a3d;
   color: white;
 }
 
+@mixin par {
+  font-size: clamp(0.5rem, 1vw, 2rem);
+  line-height: 180%;
+  padding-bottom: 5%;
+}
+
 // =========================================================================
 // Body
 // =========================================================================
@@ -162,9 +168,7 @@ header {
         }
       }
       p {
-        font-size: clamp(0.5rem, 1vw, 2rem);
-        line-height: 180%;
-        padding-bottom: 5%;
+        @include par;
         width: 65%;
       }
       .crypto-btns {
@@ -196,22 +200,27 @@ header {
 // =========================================================================
 
 #crypto-chart {
-  background-color: white;
+  background-color: $blue;
+  color: white;
   padding-block: 2%;
 
   .chart-container {
+    //background-color: $background2;
+    border-radius: 25px;
+    padding: 3% 5%;
+
     .chart {
       display: grid;
       grid-template-columns: 0.25fr 1fr 1fr 1fr 1fr 1fr;
       align-items: center;
     }
     .chart-header {
-      border-block: 1px rgba(0, 0, 0, 0.2) solid;
+      border-block: 1px rgba(255, 255, 255, 0.5) solid;
       font-size: clamp(0.5rem, 0.8vw, 2rem);
       padding-block: 0.5%;
     }
     .chart-crypto {
-      border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+      border-bottom: 1px rgba(255, 255, 255, 0.5) solid;
       font-size: clamp(0.7rem, 1vw, 2.5rem);
       padding-block: 2.5%;
       .crypto-name-chart {
@@ -222,6 +231,99 @@ header {
         }
       }
     }
+  }
+}
+
+// =========================================================================
+// Exchange Section
+// =========================================================================
+
+#exchange {
+  background-color: $background2;
+
+  .exchange-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9rem;
+    padding: 10% 10%;
+
+    .exchange-left {
+      h1 {
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
+        padding-bottom: 5%;
+      }
+      p {
+        @include par;
+      }
+      .exchange-amount {
+        display: flex;
+        padding-bottom: 5%;
+
+        .amount-left {
+          background: white;
+          border: 1px solid $blue;
+          border-radius: 20px;
+          color: $blue;
+          display: flex;
+          align-items: center;
+          padding: 1.75% 4%;
+          margin-right: 5%;
+          width: 100%;
+
+          p {
+            border-right: 1px solid $blue;
+            font-size: clamp(0.5rem, 1vw, 2rem);
+            padding: 0 5% 0 0;
+            margin-right: 5%;
+          }
+          input {
+            border: none;
+            color: $blue;
+            font-size: clamp(0.5rem, 1vw, 2rem);
+            outline: none;
+            width: 65%;
+          }
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+        .dropdown-right {
+          background: white;
+          border: 1px solid $blue;
+          border-radius: 20px;
+          padding: 3% 2%;
+          margin: auto 0;
+          width: 25%;
+
+          .currency {
+            border: 0px;
+            display: flex;
+            outline: 0px;
+            color: $blue;
+            font-size: clamp(0.5rem, 1vw, 2rem);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    h3 {
+      @include blue-btn;
+      border-radius: 50px;
+      font-size: 1.25vw;
+      padding: 2.5%;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  img {
+    padding-top: 10%;
+    width: 100%;
   }
 }
 
@@ -243,7 +345,7 @@ header {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    margin-top: 28%;
+    margin-top: 58%;
     padding-bottom: 5%;
     width: 80%;
     z-index: 5;
@@ -258,11 +360,23 @@ header {
   .hide {
     display: none;
   }
+  .exchange-container {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+
+    img {
+      display: none;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .crypto-container {
     grid-template-columns: 1fr !important;
+
+    img {
+      display: none !important;
+    }
   }
   .crypto-left {
     margin: 0 auto !important;

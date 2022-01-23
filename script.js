@@ -41,11 +41,6 @@ const createRow = (data, i) => {
   mainDiv.appendChild(percent)
   percent.innerHTML = `${data[i].price_change_percentage_24h.toFixed(2)}%`
 
-  // Changes color of percentage
-  percent.innerHTML > 0
-    ? (percent.style.color = "green")
-    : (percent.style.color = "red")
-
   const rowData = [`$${data[i].market_cap}`, `$${data[i].total_volume}`]
 
   rowData.forEach((data) => {
@@ -60,11 +55,9 @@ const createRow = (data, i) => {
 
 // Fetches data from coin gecko api
 //-----------------------------------------------------------------------------
-const api = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false`
+const chartApi = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false`
 
-const api2 = `https://api.coingecko.com/api/v3/search/trending`
-
-fetch(api)
+fetch(chartApi)
   .then((response) => {
     return response.json()
   })
@@ -78,9 +71,41 @@ fetch(api)
 //  Crypto Exchange
 //=============================================================================
 
+const amount = document.querySelector("#amount-amount")
+const crypto = document.querySelector("#amount-currency")
+const currency = document.getElementById("receive-currency")
+const receive = document.getElementById("receive-amount")
+
+let dataSet = ""
+
+amount.addEventListener("input", () => {
+  fetchExchange()
+})
+
+crypto.addEventListener("change", () => {
+  fetchExchange()
+})
+currency.addEventListener("change", () => {
+  fetchExchange()
+})
+const changeValue = (data) => {
+  receive.innerHTML = amount.value * data
+}
+
+const fetchExchange = () => {
+  fetch(
+    `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${crypto.value}&to_currency=${currency.value}&apikey=IB93BKOBVZWE5MEG`
+  )
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      changeValue(data[`Realtime Currency Exchange Rate`][`5. Exchange Rate`])
+    })
+}
+fetchExchange()
+
 /*----------------------------------------------------------------
-
-
 
 
 
