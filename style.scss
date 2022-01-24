@@ -17,11 +17,13 @@ $dark: #292a3d;
 @mixin buttons {
   @include flex-between;
 
-  h3 {
+  p {
     border: $blue 2px solid;
     border-radius: 50px;
     cursor: pointer;
     font-size: clamp(0.75rem, 1.1vw, 3rem);
+    display: flex;
+    justify-content: center;
 
     &:hover {
       opacity: 0.9;
@@ -31,11 +33,13 @@ $dark: #292a3d;
 
 @mixin white-btn {
   color: $blue;
+  font-weight: bolder;
 }
 
 @mixin blue-btn {
   background: $blue;
   color: white;
+  font-weight: bolder;
 }
 
 @mixin par {
@@ -160,11 +164,11 @@ header {
     padding-block: 8%;
 
     .crypto-left {
-      h2 {
+      h1 {
         color: $blue;
         font-size: clamp(0.75rem, 1.1vw, 3rem);
       }
-      h1 {
+      h2 {
         font-size: clamp(2rem, 4vw, 10rem);
         padding-block: 3%;
 
@@ -178,7 +182,7 @@ header {
       }
       .crypto-btns {
         @include buttons;
-
+        width: clamp(14rem, 50%, 50%);
         .started-btn {
           @include blue-btn;
           padding: 2% 6%;
@@ -313,16 +317,13 @@ header {
         }
       }
     }
-    h3 {
-      @include blue-btn;
-      border-radius: 50px;
-      font-size: 1.25vw;
-      padding: 2.5%;
-      text-align: center;
-      cursor: pointer;
+    .buy-btn-container {
+      @include buttons;
 
-      &:hover {
-        opacity: 0.9;
+      .buy-now {
+        @include blue-btn;
+        width: 100%;
+        padding: 1%;
       }
     }
   }
@@ -351,7 +352,7 @@ header {
     }
 
     .security-right {
-      h2 {
+      h1 {
         font-size: clamp(1.5rem, 2.5vw, 3rem);
         padding-bottom: 5%;
       }
@@ -360,7 +361,7 @@ header {
         align-items: center;
         padding-bottom: 2%;
 
-        h3 {
+        p {
           font-size: clamp(0.7rem, 1.1vw, 2.25rem);
         }
         i {
@@ -368,7 +369,7 @@ header {
           margin-right: 3%;
         }
       }
-      p {
+      .security-info {
         @include par;
         opacity: 0.8;
       }
@@ -395,7 +396,7 @@ header {
     }
     .questions-right {
       h1 {
-        color: $blue;
+        color: #253cb5;
         font-size: clamp(0.75rem, 1.1vw, 2rem);
         padding-bottom: 2%;
       }
@@ -412,7 +413,7 @@ header {
           align-items: center;
           padding-bottom: 4%;
 
-          h4 {
+          h3 {
             font-size: clamp(0.75rem, 1.1vw, 2.5rem);
           }
           i {
@@ -443,8 +444,9 @@ header {
     padding: 1%;
     margin-top: 5%;
 
-    h3 {
+    p {
       margin-right: 10%;
+      font-weight: bolder;
 
       a {
         color: $blue;
@@ -468,7 +470,7 @@ footer {
     grid-template-columns: repeat(4, 1fr);
 
     div {
-      h5 {
+      h1 {
         font-size: clamp(0.75rem, 1.1vw, 3rem);
         padding-bottom: 1.5%;
       }

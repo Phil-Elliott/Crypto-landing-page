@@ -31,6 +31,8 @@ const createRow = (data, i) => {
   mainDiv.appendChild(nameDiv)
   nameDiv.appendChild(img)
   img.src = data[i].image
+  img.alt = data[i].name
+  img.SameSite = "none"
   nameDiv.appendChild(name)
   name.innerHTML = data[i].name
   mainDiv.appendChild(price)
