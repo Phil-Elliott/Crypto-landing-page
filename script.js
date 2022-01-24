@@ -89,7 +89,12 @@ currency.addEventListener("change", () => {
   fetchExchange()
 })
 const changeValue = (data) => {
-  receive.innerHTML = amount.value * data
+  receive.innerHTML =
+    "$" +
+    (amount.value * data)
+      .toFixed(2)
+      .toString()
+      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
 }
 
 const fetchExchange = () => {
@@ -105,8 +110,40 @@ const fetchExchange = () => {
 }
 fetchExchange()
 
-/*----------------------------------------------------------------
+//=============================================================================
+//  Question Dropdown
+//=============================================================================
 
+const arrow1 = document.getElementById("arrow1")
+const answer1 = document.querySelector(".answer1")
+const arrow2 = document.getElementById("arrow2")
+const answer2 = document.querySelector(".answer2")
+const arrow3 = document.getElementById("arrow3")
+const answer3 = document.querySelector(".answer3")
+const arrow4 = document.getElementById("arrow4")
+const answer4 = document.querySelector(".answer4")
 
-
-*/
+arrow1.addEventListener("click", () => {
+  answer2.style.display = "none"
+  answer3.style.display = "none"
+  answer4.style.display = "none"
+  answer1.style.display = "flex"
+})
+arrow2.addEventListener("click", () => {
+  answer1.style.display = "none"
+  answer3.style.display = "none"
+  answer4.style.display = "none"
+  answer2.style.display = "flex"
+})
+arrow3.addEventListener("click", () => {
+  answer2.style.display = "none"
+  answer1.style.display = "none"
+  answer4.style.display = "none"
+  answer3.style.display = "flex"
+})
+arrow4.addEventListener("click", () => {
+  answer2.style.display = "none"
+  answer3.style.display = "none"
+  answer1.style.display = "none"
+  answer4.style.display = "flex"
+})

@@ -54,6 +54,10 @@ $dark: #292a3d;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: $dark;
@@ -90,8 +94,10 @@ header {
     .header-links {
       font-size: clamp(0.8rem, 1vw, 1vw);
       a {
+        color: $dark;
         cursor: pointer;
         padding: 0 1rem;
+        text-decoration: none;
       }
     }
     .header-btns {
@@ -118,17 +124,16 @@ header {
   border: none;
   cursor: pointer;
   display: none;
-  top: 1.5%;
+  top: 1%;
   right: 8%;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
   width: clamp(1.5rem, 4%, 4%);
-  height: 2.25%;
+  height: 1.25%;
 
   span {
     height: 3px;
-    width: 1000px;
     background-color: $blue;
     border-radius: 10px;
   }
@@ -322,8 +327,169 @@ header {
     }
   }
   img {
-    padding-top: 10%;
+    padding-top: 5%;
     width: 100%;
+  }
+}
+
+// =========================================================================
+// Security Section
+// =========================================================================
+
+#security {
+  background-color: $background;
+  padding-block: 7%;
+
+  .security-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+
+    img {
+      padding-top: 5%;
+      width: 100%;
+    }
+
+    .security-right {
+      h2 {
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
+        padding-bottom: 5%;
+      }
+      .security-info-title {
+        display: flex;
+        align-items: center;
+        padding-bottom: 2%;
+
+        h3 {
+          font-size: clamp(0.7rem, 1.1vw, 2.25rem);
+        }
+        i {
+          color: $blue;
+          margin-right: 3%;
+        }
+      }
+      p {
+        @include par;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// =========================================================================
+// Questions Section
+// =========================================================================
+
+#questions {
+  background-color: $background2;
+  padding-block: 5%;
+
+  .questions-container {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 10%;
+
+    img {
+      padding-top: 10%;
+      width: 100%;
+    }
+    .questions-right {
+      h1 {
+        color: $blue;
+        font-size: clamp(0.75rem, 1.1vw, 2rem);
+        padding-bottom: 2%;
+      }
+      h2 {
+        font-size: clamp(1.25rem, 2vw, 3rem);
+        margin-bottom: 5%;
+      }
+      .question-container {
+        border-bottom: 1px groove rgba(255, 255, 255, 1);
+        margin-bottom: 4%;
+        .question {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 4%;
+
+          h4 {
+            font-size: clamp(0.75rem, 1.1vw, 2.5rem);
+          }
+          i {
+            cursor: pointer;
+          }
+        }
+        p {
+          @include par;
+          opacity: 0.8;
+          padding-bottom: 2%;
+          display: none;
+        }
+      }
+    }
+  }
+  .back-to-top {
+    background-color: $background;
+    border: $blue 2px solid;
+    border-radius: 50px;
+    color: $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(130px, 15%, 15%);
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: clamp(0.75rem, 1.1vw, 3rem);
+    padding: 1%;
+    margin-top: 5%;
+
+    h3 {
+      margin-right: 10%;
+
+      a {
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// =========================================================================
+// Footer
+// =========================================================================
+
+footer {
+  background-color: $blue;
+  color: white;
+  padding-block: 1%;
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    div {
+      h5 {
+        font-size: clamp(0.75rem, 1.1vw, 3rem);
+        padding-bottom: 1.5%;
+      }
+      p {
+        font-size: clamp(0.5rem, 1vw, 2.5rem);
+      }
+    }
+    .socials {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding-inline: 3%;
+
+        i {
+          font-size: 1.75vw;
+        }
+      }
+    }
   }
 }
 
@@ -368,6 +534,22 @@ header {
       display: none;
     }
   }
+  .security-container {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    width: 80%;
+    margin: 0 auto;
+    img {
+      display: none;
+    }
+  }
+  .questions-container {
+    grid-template-columns: 1fr !important;
+    img {
+      display: none;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -380,5 +562,12 @@ header {
   }
   .crypto-left {
     margin: 0 auto !important;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr !important;
+
+    div {
+      padding-bottom: 5%;
+    }
   }
 }

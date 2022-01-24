@@ -4,22 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Crypto</title>
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="container">
         <div class="header-container">
           <div class="logo">
             <h1><span>C</span>rypto</h1>
           </div>
           <div class="header-links">
-            <a>Cryptocurency</a>
-            <a>Exchanges</a>
-            <a>Security</a>
-            <a>Process</a>
-            <a>Questions</a>
+            <a href="#crypto">Cryptocurency</a>
+            <a href="#crypto-chart">Chart</a>
+            <a href="#exchange">Exchange</a>
+            <a href="#security">Security</a>
+            <a href="#questions">Questions</a>
           </div>
           <div class="header-btns">
             <h3 class="login-btn">Log in</h3>
@@ -125,17 +147,148 @@
         </div>
       </div>
     </section>
+    <section id="security">
+      <div class="container">
+        <div class="security-container">
+          <div class="security-left">
+            <img src="Images/security.svg" alt="calculator" />
+          </div>
+          <div class="security-right">
+            <h2>Industry-leading security from day one</h2>
+            <div class="security-info-container">
+              <div class="security-info-title">
+                <i class="fas fa-check-circle"></i>
+                <h3>Safety, security, and compliance</h3>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat laudantium quia non minus voluptatibus omnis rem debitis
+                a? Voluptas amet quaerat enim dolore. Sit corporis eum eligendi
+                enim ad tenetur?
+              </p>
+            </div>
+            <div class="security-info-container">
+              <div class="security-info-title">
+                <i class="fas fa-check-circle"></i>
+                <h3>Hardware security keys</h3>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat laudantium quia non minus.
+              </p>
+            </div>
+            <div class="security-info-container">
+              <div class="security-info-title">
+                <i class="fas fa-check-circle"></i>
+                <h3>SOC Certification</h3>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat laudantium quia non minus voluptatibus omnis rem debitis
+                a?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="questions">
+      <div class="container">
+        <div class="questions-container">
+          <div class="question-left">
+            <img src="Images/questions.svg" alt="calculator" />
+          </div>
+          <div class="questions-right">
+            <h1>Support</h1>
+            <h2>Frequently asked questions</h2>
+            <div class="question-container">
+              <div class="question">
+                <h4>Why should I choose CRYPTO?</h4>
+                <i class="fas fa-sort-down" id="arrow1"></i>
+              </div>
+              <p class="answer1" style="display: flex">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                laborum ad ullam, facilis earum atque totam! Ab nesciunt dolores
+                quae perspiciatis sunt ipsum neque, veritatis qui sequi sit
+                reiciendis vitae.
+              </p>
+            </div>
+            <div class="question-container">
+              <div class="question">
+                <h4>How secure is CRYPTO?</h4>
+                <i class="fas fa-sort-down" id="arrow2"></i>
+              </div>
+              <p class="answer2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                laborum ad ullam, facilis earum atque totam! Ab nesciunt dolores
+                quae perspiciatis sunt ipsum neque, veritatis qui sequi sit
+                reiciendis vitae.
+              </p>
+            </div>
+            <div class="question-container">
+              <div class="question">
+                <h4>What are stable coins?</h4>
+                <i class="fas fa-sort-down" id="arrow3"></i>
+              </div>
+              <p class="answer3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                laborum ad ullam, facilis earum atque totam! Ab nesciunt dolores
+                quae perspiciatis sunt ipsum neque, veritatis qui sequi sit
+                reiciendis vitae.
+              </p>
+            </div>
+            <div class="question-container">
+              <div class="question">
+                <h4>How do I actually buy Bitcoin?</h4>
+                <i class="fas fa-sort-down" id="arrow4"></i>
+              </div>
+              <p class="answer4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                laborum ad ullam, facilis earum atque totam! Ab nesciunt dolores
+                quae perspiciatis sunt ipsum neque, veritatis qui sequi sit
+                reiciendis vitae.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="back-to-top">
+          <h3><a href="#header">Back to top</a></h3>
+          <i class="fas fa-arrow-up"></i>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div>
+            <h5>Location</h5>
+            <p>Downtown Chicago</p>
+          </div>
+          <div>
+            <h5>Phone</h5>
+            <p>434-321-4567</p>
+          </div>
+          <div>
+            <h5>Email</h5>
+            <p>MessageMe@gmail.com</p>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.pinterest.com/">
+              <i class="fab fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
-
-<!-- ********************************
-
-            Hamburger Menu
-            1) Create toggle bttn 
-            2) Set to display only when 1000px or so 
-            3) Make 2 classes   
-                1) Display none for UL
-                2) Active that positions everything correctly
-            4) Use Javascript to toggle between classes 
--->
