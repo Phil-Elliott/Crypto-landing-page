@@ -1,5 +1,8 @@
 # CRYPTO Landing Page
 
+![CRYPTO](https://user-images.githubusercontent.com/89685937/150853500-94cbd9cb-60f2-4933-bb49-43636c7c2e18.gif)
+
+
 An interactive and dynamic landing page using HTML, Sass, and vanilla JavaScript. It is connected to the coin gecko api and the alpha advantage api. 
 
 ## How the APIs work
