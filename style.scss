@@ -279,7 +279,7 @@ header {
           margin-right: 5%;
           width: 100%;
 
-          p {
+          .amount-label {
             border-right: 1px solid $blue;
             font-size: clamp(0.5rem, 1vw, 2rem);
             padding: 0 5% 0 0;
